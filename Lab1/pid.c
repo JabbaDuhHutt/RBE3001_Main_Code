@@ -33,7 +33,7 @@ void setConst(char link, float Kp, float Ki, float Kd){
     p.Kd_L = Kd;
   }
   else{
-    printf("Error, Link must be H or L \n");
+    printf("Error, Link must be H or L \n"); // if the wrong character is entered
   }
 }
 
