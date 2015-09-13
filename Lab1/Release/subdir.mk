@@ -5,6 +5,8 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../ADC.c \
+../DAC.c \
+../SPI.c \
 ../USART.c \
 ../globals.c \
 ../isrs.c \
@@ -14,6 +16,8 @@ C_SRCS += \
 
 OBJS += \
 ./ADC.o \
+./DAC.o \
+./SPI.o \
 ./USART.o \
 ./globals.o \
 ./isrs.o \
@@ -23,6 +27,8 @@ OBJS += \
 
 C_DEPS += \
 ./ADC.d \
+./DAC.d \
+./SPI.d \
 ./USART.d \
 ./globals.d \
 ./isrs.d \
