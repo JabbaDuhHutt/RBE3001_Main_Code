@@ -8,6 +8,7 @@
 
 #include "RBELib/RBELib.h"
 
+
 void debugUSARTInit(unsigned long baudrate){
   //Calculation given in table 16-1 on page 174
   //Sets the baudrate to whatever is desired

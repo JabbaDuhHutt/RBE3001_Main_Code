@@ -15,12 +15,13 @@
  *
  * @todo Calculate the angle using the ADC reading.
  */
-//4.9 * 0.068degree/mV assuming pot is 340 degree pot
+// subtract offset of 645 and multiplies by 0.24 deg/adcVal
 
 int potAngle(int pot){
-	initGlobals();
-	initADC(pot);
-	return globals.ADCval*0.33;
+	//uncomment these ONLY if you are sure main isnt doing it
+	//initGlobals();
+	//initADC(pot);
+	return ((globals.ADCval - 645) * 0.24);
 
 }
 
@@ -32,7 +33,8 @@ int potAngle(int pot){
  * @todo Convert the ADC value into a voltage in mV (so no floats needed).
  */
 int potVolts(int pot){
-	initGlobals();
-	initADC(pot);
-	return globals.ADCval*4.9;
+	//uncomment these ONLY if you are sure main isnt doing it
+	//initGlobals();
+	//initADC(pot);
+	return (globals.ADCval*4.9);
 }

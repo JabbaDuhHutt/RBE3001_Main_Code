@@ -13,13 +13,19 @@
 
 
 int main(void){
-	initGlobals();
+	SREG = 0X80; //global interrupt enable
+	initGlobals(); //initialize variables
 	initRBELib(); //initialize RBELib
-	initADC(1);
+	initADC(globals.upperPotChannel); //initialize ADC
 	debugUSARTInit(115200); // initialize USART
-	volatile int x = globals.ADCval;
-	printf("ADC Value %d \n", x);
-	return 0;
+	int mV = 0,angle = 0;
+	printf("ADCVal, MiliVolts, Angle \n \r");
 
+	while(1){
+	mV = potVolts(globals.upperPotChannel);
+	angle = potAngle(globals.upperPotChannel);
+	printf("%d, %d, %d \n \r", globals.ADCval, mV, angle);
+	}
+	return 0;
 }
 
